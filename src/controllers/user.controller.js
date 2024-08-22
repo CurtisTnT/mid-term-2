@@ -77,7 +77,7 @@ const userController = {
         email: existUser.email,
         profileId: existUser.profileId,
       };
-      const token = await jwt.sign(userInfo, secretKey, { expiresIn: 60 });
+      const token = await jwt.sign(userInfo, secretKey, { expiresIn: "1h" });
 
       const updatedToken = await TokenModel.findOneAndUpdate(
         { email },
